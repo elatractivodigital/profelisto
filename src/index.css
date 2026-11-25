@@ -1,0 +1,172 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Nunito', system-ui, -apple-system, sans-serif;
+    background-color: #f7f9fb;
+    color: #3c3c3c;
+  }
+}
+
+/* Fondo punteado sutil estilo Duolingo / cuaderno docente */
+.bg-duo-dots {
+  background-color: #f7f9fb;
+  background-image: radial-gradient(#dce3ea 1.35px, transparent 1.35px);
+  background-size: 24px 24px;
+}
+
+/* Botones 3D gruesos con sombra inferior estilo Duolingo */
+.btn-3d {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  border-radius: 1rem;
+  transition: transform 0.08s ease, filter 0.15s ease, border-bottom-width 0.08s ease;
+  user-select: none;
+}
+
+.btn-3d:active:not(:disabled) {
+  transform: translateY(3px);
+}
+
+.btn-3d-green {
+  background-color: #58cc02;
+  color: #ffffff;
+  border-bottom: 4px solid #46a302;
+}
+.btn-3d-green:hover:not(:disabled) {
+  filter: brightness(1.05);
+}
+
+.btn-3d-blue {
+  background-color: #1cb0f6;
+  color: #ffffff;
+  border-bottom: 4px solid #1899d6;
+}
+.btn-3d-blue:hover:not(:disabled) {
+  filter: brightness(1.05);
+}
+
+.btn-3d-yellow {
+  background-color: #ffc800;
+  color: #5c4500;
+  border-bottom: 4px solid #e5a400;
+}
+.btn-3d-yellow:hover:not(:disabled) {
+  filter: brightness(1.04);
+}
+
+.btn-3d-red {
+  background-color: #ff4b4b;
+  color: #ffffff;
+  border-bottom: 4px solid #ea2b2b;
+}
+.btn-3d-red:hover:not(:disabled) {
+  filter: brightness(1.05);
+}
+
+.btn-3d-white {
+  background-color: #ffffff;
+  color: #4b4b4b;
+  border: 2px solid #e5e5e5;
+  border-bottom: 4px solid #d4d4d4;
+}
+.btn-3d-white:hover:not(:disabled) {
+  background-color: #f7f9fb;
+}
+
+.btn-3d-outline-blue {
+  background-color: #ffffff;
+  color: #1cb0f6;
+  border: 2px solid #bce6fb;
+  border-bottom: 4px solid #8fd4f8;
+}
+.btn-3d-outline-blue:hover:not(:disabled) {
+  background-color: #f0f9ff;
+}
+
+.btn-3d-outline-red {
+  background-color: #fff8f8;
+  color: #ea2b2b;
+  border: 2px solid #fecaca;
+  border-bottom: 4px solid #fca5a5;
+}
+.btn-3d-outline-red:hover:not(:disabled) {
+  background-color: #ffecec;
+}
+
+.btn-3d-disabled {
+  background-color: #dfe4ea;
+  color: #9aa4b2;
+  border-bottom: 4px solid #cbd2d9;
+  cursor: not-allowed;
+}
+
+/* Tarjetas redondeadas con relieve inferior */
+.card-duo {
+  background-color: #ffffff;
+  border: 2px solid #e5e7eb;
+  border-bottom-width: 5px;
+  border-bottom-color: #d6dce3;
+  border-radius: 1.75rem;
+}
+
+/* Animaciones suaves de utensilios, avatares y feedback */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(var(--tw-rotate, 0deg));
+  }
+  50% {
+    transform: translateY(-8px) rotate(var(--tw-rotate, 0deg));
+  }
+}
+
+@keyframes bounceGentle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.88) translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes shakeBoss {
+  0%, 100% { transform: translateX(0) rotate(0deg); }
+  20% { transform: translateX(-5px) rotate(-2deg); }
+  40% { transform: translateX(5px) rotate(2deg); }
+  60% { transform: translateX(-4px) rotate(-1deg); }
+  80% { transform: translateX(4px) rotate(1deg); }
+}
+
+.animate-float-slow {
+  animation: floatSlow 4.2s ease-in-out infinite;
+}
+
+.animate-bounce-gentle {
+  animation: bounceGentle 2.2s ease-in-out infinite;
+}
+
+.animate-pop-in {
+  animation: popIn 0.28s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-shake-boss {
+  animation: shakeBoss 0.55s ease-in-out 2;
+}
